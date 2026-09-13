@@ -9,6 +9,7 @@ Repozytorium ma dwie warstwy. Pierwsza to sam plik zasad: wklejasz go do dowolne
 | Plik | Do czego służy | Stan |
 |---|---|---|
 | `styl-pl.md` (katalog ze stylami) | Zasady pisania. Jedyne źródło prawdy. | działa |
+| `zasady-dla-ciebie.md` | Te same zasady gotowe do wklejenia w dowolne AI, bez odwołań do autora. | działa |
 | `hooks/kaganiec.py` | Sprawdza gotową odpowiedź. Gdy łamie progi, odsyła ją raz do poprawki. | działa |
 | `hooks/licznik-mglistosci.py` | Po cichu mierzy każdą odpowiedź i zapisuje wynik na twoim dysku. | działa |
 | `hooks/hooks.json` | Włącza kaganiec i licznik po instalacji wtyczki. | działa |
@@ -20,23 +21,16 @@ Pliki oznaczone „historia" zostają w repozytorium, żeby było widać, skąd 
 
 ## Wariant A: sam plik zasad (bez instalowania czegokolwiek)
 
-Otwórz plik `styl-pl.md` z katalogu ze stylami i skopiuj jego treść. Przed wklejeniem zrób trzy poprawki:
-
-1. Zamień imię „Łukasz" (we wszystkich formach) na swoje.
-2. Usuń akapit o parkingu pomysłów. Odwołuje się do skryptu, którego nie masz.
-3. Poza Claude Code usuń też górny nagłówek między liniami `---`, rozdział „Subagenci" i punkt o linii `[KTO-CZEKA]`.
-
-Gdzie wkleić:
+Otwórz plik `zasady-dla-ciebie.md`, skopiuj całą treść i wklej ją w jedno z miejsc poniżej. Niczego nie poprawiasz.
 
 | Narzędzie | Miejsce |
 |---|---|
-| Claude Code, jako styl odpowiedzi | Napisz w Claude Code: „zapisz plik styl-pl.md jako mój styl odpowiedzi". Potem w `/config` wybierz styl `styl-pl`. Tu nie usuwaj nagłówka `---`. |
-| Claude Code, jako `CLAUDE.md` | Wklej do pliku `~/.claude/CLAUDE.md` (wszystkie projekty) albo `CLAUDE.md` w katalogu projektu (jeden projekt). |
+| Claude Code | Wklej do pliku `~/.claude/CLAUDE.md` (wszystkie projekty) albo `CLAUDE.md` w katalogu projektu (jeden projekt). |
 | Codex, Cursor i inne narzędzia czytające `AGENTS.md` | Wklej do pliku `AGENTS.md` w katalogu projektu. |
 | ChatGPT w przeglądarce | Załóż projekt i wklej treść w pole z instrukcjami projektu. |
 | Claude w przeglądarce | Załóż projekt i wklej treść w pole z instrukcjami projektu. |
 
-Styl odpowiedzi w Claude Code działa najpewniej. Siedzi w instrukcji systemowej, a Claude Code sam przypomina go w trakcie długiej rozmowy.
+W Claude Code możesz zamiast tego użyć zasad jako stylu odpowiedzi: to plik `styl-pl.md` z katalogu ze stylami. Styl działa najpewniej, bo siedzi w instrukcji systemowej, a Claude Code sam przypomina go w długiej rozmowie. Ten plik jest pisany pod autora: zamień w nim imię „Łukasz" na swoje i usuń zdanie o parkingu pomysłów, bo odwołuje się do skryptu, którego nie masz. Napisz w Claude Code: „zapisz plik styl-pl.md jako mój styl odpowiedzi", a potem w `/config` wybierz styl `styl-pl`.
 
 ## Wariant B: cała wtyczka w Claude Code
 
