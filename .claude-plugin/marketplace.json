@@ -1,0 +1,14 @@
+{
+  "name": "styl-pl",
+  "owner": {
+    "name": "Łukasz Hodorowicz"
+  },
+  "plugins": [
+    {
+      "name": "styl-pl",
+      "description": "Zasady pisania prostą polszczyzną dla Claude Code: styl odpowiedzi, kaganiec, licznik mglistości i raport.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "styl-pl",
+  "version": "1.0.0",
+  "description": "Zasady pisania prostą polszczyzną dla Claude Code: styl odpowiedzi, kaganiec odrzucający odpowiedź łamiącą progi, licznik mglistości i raport z pomiarów.",
+  "author": {
+    "name": "Łukasz Hodorowicz"
+  },
+  "license": "MIT"
+}
