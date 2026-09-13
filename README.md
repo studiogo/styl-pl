@@ -37,11 +37,9 @@ W Claude Code możesz zamiast tego użyć zasad jako stylu odpowiedzi: to plik `
 W Claude Code wpisz:
 
 ```
-/plugin marketplace add ADRES-REPOZYTORIUM
+/plugin marketplace add studiogo/styl-pl
 /plugin install styl-pl@styl-pl
 ```
-
-`ADRES-REPOZYTORIUM` to nazwa w postaci `właściciel/styl-pl`, widoczna na górze tej strony.
 
 Potem uruchom Claude Code od nowa i w `/config` wybierz styl `styl-pl:styl-pl`. Sama instalacja stylu nie włącza, trzeba go wybrać.
 
