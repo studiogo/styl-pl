@@ -166,11 +166,7 @@ def zbadaj(odpowiedz, lic, wolno_dlugo):
             f"{pytania} pytania w odpowiedzi, dozwolone {PROGI['pytania_max']}",
             "zostaw jedno pytanie, na które sam nie znasz odpowiedzi; resztę rozstrzygnij"))
 
-    znaczniki = KTO_CZEKA.findall(proza)
-    if len(znaczniki) != 1:
-        naruszenia.append(("kto-czeka",
-            f"linii [KTO-CZEKA] jest {len(znaczniki)}, ma być dokładnie 1 na końcu",
-            "dopisz: [KTO-CZEKA: GOTOWE | wynik w 3-8 słowach] albo [KTO-CZEKA: CZEKA | potrzeba w 3-8 słowach]"))
+    # Linia KTO-CZEKA wycofana 11.10.2026 (nadzor-sesji); stare odpowiedzi z nią tylko ją pomijają.
 
     return naruszenia, len(slowa)
 
