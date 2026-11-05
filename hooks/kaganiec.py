@@ -59,6 +59,18 @@ ANGLICYZMY = ("content", "workflow", "case", "folder", "pipeline", "insights",
 
 KTO_CZEKA = re.compile(r"\[KTO-CZEKA: (GOTOWE|CZEKA) \| [^\]\n]{3,}\]")
 
+# Dane dla paska, nie proza: blok wyspy, inne komentarze HTML i znacznik sztafety.
+BLOK_WYSPY = re.compile(r"<!--\s*wyspa.*?-->", re.DOTALL)
+KOMENTARZ_HTML = re.compile(r"<!--.*?-->", re.DOTALL)
+ZNACZNIK_SZTAFETY = re.compile(r"\[SZTAFETA\?[^\]]*\]")
+
+
+def bez_danych_paska(odpowiedz):
+    """Usuwa z odpowiedzi to, co nie jest prozą, zanim cokolwiek zmierzymy."""
+    odpowiedz = BLOK_WYSPY.sub("", odpowiedz)
+    odpowiedz = KOMENTARZ_HTML.sub("", odpowiedz)
+    return ZNACZNIK_SZTAFETY.sub("", odpowiedz)
+
 
 def wczytaj_licznik():
     """Funkcje pomiaru bierzemy z licznika, żeby nie mieć dwóch definicji zdania."""
@@ -121,6 +133,7 @@ def bez_nazw_wlasnych(tekst):
 def zbadaj(odpowiedz, lic, wolno_dlugo):
     """Zwraca listę naruszeń: (kod, opis, naprawa)."""
     naruszenia = []
+    odpowiedz = bez_danych_paska(odpowiedz)
     proza, _ = lic.wytnij_kod(odpowiedz)
     slowa = proza.split()
     tekst_zdan, _ = lic.rozdziel_tekst(proza)
